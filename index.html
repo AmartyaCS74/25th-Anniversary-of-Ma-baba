@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Wedding Anniversary - Mom & Dad</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Scroll Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--cream-bg);
+        }
+
+        /* Custom Color Variables - Premium Palette */
+        :root {
+            --gold: #CCA43B;
+            --deep-red: #8B1538;
+            --light-gold: #F4E4C1;
+            --white: #FFFFFF;
+            --dark-text: #333333;
+            --cream-bg: #FDFCF8;
+            --muted-gold: #CCA43B;
+        }
+
+        /* Hero Section with Ken Burns Effect */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--deep-red) 0%, #C41E3A 50%, var(--deep-red) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23CCA43B" opacity="0.15"/></pattern></defs><rect width="1200" height="600" fill="url(%23dots)"/></svg>');
+            opacity: 0.4;
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                transform: scale(1.15) translate(-3%, -3%);
+            }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(139, 21, 56, 0.3) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--white);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .hero .bengali-text {
+            font-size: clamp(1rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .hero h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 1;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #FFFFFF;
+        }
+
+        /* Duration Counter */
+        .counter-container {
+            background: rgba(255, 255, 255, 1);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            margin-top: 3rem;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid rgba(204, 164, 59, 0.2);
+        }
+
+        .counter-label {
+            color: var(--deep-red);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .counter-item {
+            background: linear-gradient(135deg, var(--gold), var(--light-gold));
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-red);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .counter-label-small {
+            font-size: 0.75rem;
+            color: var(--deep-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+            opacity: 1;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--gold), var(--deep-red));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            opacity: 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 52%;
+        }
+
+        .timeline-content {
+            background: var(--cream-bg);
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 3px solid var(--light-gold);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .timeline-item:nth-child(1) .timeline-content {
+            transform: rotate(-1.5deg);
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            transform: rotate(1.2deg);
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            transform: rotate(-0.8deg);
+        }
+
+        .timeline-item:nth-child(4) .timeline-content {
+            transform: rotate(1.5deg);
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: rotate(0deg) translateY(-8px) !important;
+            box-shadow: 0 12px 35px rgba(139, 21, 56, 0.25);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, var(--muted-gold) 0%, var(--light-gold) 100%);
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: var(--muted-gold);
+            border: 5px solid var(--deep-red);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            z-index: 10;
+            box-shadow: 0 0 0 4px var(--cream-bg);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            color: var(--deep-red);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-size: 1rem;
+            color: var(--deep-red);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile Timeline */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                padding-left: 100px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        /* Family Cards */
+        .family-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            height: 100%;
+        }
+
+        .family-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(139, 21, 56, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gold), var(--light-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image.animated {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-red);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .card-relation {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Uniform Grid Gallery (Instagram Style) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            opacity: 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            display: block;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 15px 40px rgba(139, 21, 56, 0.25);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(204, 164, 59, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            background: var(--muted-gold);
+            transform: rotate(90deg);
+        }
+
+        /* Global Image Cursor - Make all images clickable */
+        section img, .hero img, .family-card img, .gallery-item img, .timeline-content img {
+            cursor: pointer;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Wishes Section */
+        .wishes-container {
+            background: linear-gradient(135deg, var(--light-gold), white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+
+        .wishes-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-red);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .wishes-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+            text-align: justify;
+        }
+
+        .wishes-bengali {
+            display: block;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        /* Confetti Canvas */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Parallax Sections */
+        .parallax-section {
+            position: relative;
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .parallax-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 21, 56, 0.7), rgba(204, 164, 59, 0.5));
+        }
+
+        .parallax-overlay {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax-1 {
+            background-image: linear-gradient(135deg, rgba(139, 21, 56, 0.4), rgba(204, 164, 59, 0.4)),
+                              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%238B1538" width="1200" height="400"/><circle cx="200" cy="200" r="100" fill="%23CCA43B" opacity="0.3"/><circle cx="900" cy="150" r="120" fill="%23CCA43B" opacity="0.2"/></svg>');
+        }
+
+        .parallax-2 {
+            background-image: linear-gradient(135deg, rgba(204, 164, 59, 0.5), rgba(139, 21, 56, 0.4)),
+                              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23C41E3A" width="1200" height="400"/><circle cx="600" cy="200" r="150" fill="%23CCA43B" opacity="0.25"/></svg>');
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+            min-height: auto;
+        }
+
+        section h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            color: var(--deep-red);
+            margin-bottom: 3rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-red);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .heart {
+            color: var(--gold);
+            animation: heartBeat 1.3s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .counter-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .counter-number {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Happy Wedding Anniversary!</h1>
+            <p class="bengali-text">শুভ বিবাহ বার্ষিকী, মা ও বাবা!</p>
+            <h2>Celebrating years of love and togetherness</h2>
+            <p class="bengali-text" style="font-size: clamp(0.9rem, 3vw, 1.3rem); margin-bottom: 3rem;">তোমাদের ভালোবাসার ২৫ বছর</p>
+            
+            <div class="counter-container">
+                <div class="counter-label">Time Together</div>
+                <div class="counter-grid">
+                    <div class="counter-item">
+                        <div class="counter-number" id="years">0</div>
+                        <div class="counter-label-small">Years</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="months">0</div>
+                        <div class="counter-label-small">Months</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="days">0</div>
+                        <div class="counter-label-small">Days</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="hours">0</div>
+                        <div class="counter-label-small">Hours</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="minutes">0</div>
+                        <div class="counter-label-small">Minutes</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="seconds">0</div>
+                        <div class="counter-label-small">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section style="background-color: var(--cream-bg);">
+        <h2>Our Journey</h2>
+        <div class="container mx-auto max-w-4xl px-4">
+            <div class="timeline py-8">
+                <div class="timeline-item scroll-animate" data-aos="fade-right" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" onclick="openTimelineImage('images/2001.jpg')">
+                        <div class="timeline-year">29 January 2001</div>
+                        <div class="timeline-title">💍 Wedding Day</div>
+                        <div class="timeline-description">The beginning of a beautiful love story. Two hearts became one on this special day.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-animate" data-aos="fade-left" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" onclick="openTimelineImage('images/2002.jpg')">
+                        <div class="timeline-year">11 February 2002</div>
+                        <div class="timeline-title">👦 Birth of Your Son</div>
+                        <div class="timeline-description">The family grew with joy and laughter. A new chapter of love began.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-animate" data-aos="fade-right" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" onclick="openTimelineImage('images/2006.jpg')">
+                        <div class="timeline-year">20 August 2006</div>
+                        <div class="timeline-title">👧 Birth of Your Daughter</div>
+                        <div class="timeline-description">The family was complete. Your love multiplied with every smile and laugh.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-animate" data-aos="fade-left" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content" onclick="openTimelineImage('images/2026.jpg')">
+                        <div class="timeline-year">29 January 2026</div>
+                        <div class="timeline-title">🎉 25 Years of Togetherness</div>
+                        <div class="timeline-description">A silver jubilee celebration of endless love, sacrifices, and beautiful memories.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 1 -->
+    <div class="parallax-section parallax-1" data-aos="fade">
+        <div class="parallax-overlay">Forever & Always</div>
+    </div>
+
+    <!-- Family Members Section -->
+    <section class="bg-gray-50">
+        <h2>Our Family</h2>
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Father Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="card-image animated"><img src="images/Picture 2.jpg" alt="বাবা" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">বাবা</div>
+                        <div class="card-relation">The Pillar</div>
+                        <div class="card-description">আমাদের শক্তির উৎস। যার জ্ঞান আর অভিজ্ঞতা আমাদের জীবনের পথ দেখায়।</div>
+                    </div>
+                </div>
+
+                <!-- Mother Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-image animated"><img src="images/Picture 8.jpg" alt="মা" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">মা</div>
+                        <div class="card-relation">The Heart</div>
+                        <div class="card-description">আমাদের ঘরের রানী। যার ভালোবাসা আমাদের প্রতিটি মুহূর্তকে মধুর করে তোলে।</div>
+                    </div>
+                </div>
+
+                <!-- Son Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-image animated"><img src="images/Picture 10.jpg" alt="ছালু" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content"> 
+                        <div class="card-name">ছালু</div>
+                        <div class="card-relation">Pride</div>
+                        <div class="card-description">আপনাদের ভালোবাসা দেখে শিখেছি প্রকৃত সম্পর্ক কাকে বলে। আপনাদের গর্ব হতে চাই সবসময়।</div>
+                    </div>
+                </div>
+
+                <!-- Daughter Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-image animated"><img src="images/Picture 9.jpg" alt="দুন্তা" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">দুন্তা</div>
+                        <div class="card-relation">Little Sunshine</div>
+                        <div class="card-description">আপনার ভালোবাসা আমার মুখে হাসি ফোটায়। আপনারা আমার সবকিছু।</div>
+                    </div>
+                </div>
+
+                <!-- Grandfather Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card-image animated"><img src="images/Picture 3.jpeg" alt="ঠাকুরদাদা" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">ঠাকুরদাদা</div>
+                        <div class="card-relation">Grandfather</div>
+                        <div class="card-description">আমাদের বটবৃক্ষ। যার আশীর্বাদ আমাদের মাথার উপর সবসময় থাকে।</div>
+                    </div>
+                </div>
+
+                <!-- Grandmother Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card-image animated"><img src="images/Picture 1.jpg" alt="ঠাকুরমা" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">ঠাকুরমা</div>
+                        <div class="card-relation">Grandmother</div>
+                        <div class="card-description">স্নেহ আর ভালোবাসার ভাণ্ডার। যার গল্পের ঝুলি কখনো ফুরায় না।</div>
+                    </div>
+                </div>
+
+                <!-- Three Aunts Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card-image animated"><img src="images/Picture 4.jpeg" alt="আমাদের তিন পিসি" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">আমাদের তিন পিসি</div>
+                        <div class="card-relation">Our Aunts</div>
+                        <div class="card-description">আদর আর আবদারের আরেক নাম। যারা আমাদের জীবনে রঙ ছড়িয়ে দেন।</div>
+                    </div>
+                </div>
+
+                <!-- Full Family Card -->
+                <div class="family-card scroll-animate" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="card-image animated"><img src="images/Picture 13.jpg" alt="পুরো পরিবার" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></div>
+                    <div class="card-content">
+                        <div class="card-name">পুরো পরিবার</div>
+                        <div class="card-relation">Full Family</div>
+                        <div class="card-description">একসাথে আমরা, ভালোবাসায় বাঁধা।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <div class="parallax-section parallax-2" data-aos="fade">
+        <div class="parallax-overlay">25 Years of Love</div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section style="background-color: var(--cream-bg);">
+        <h2>Memory Gallery</h2>
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="gallery-grid scroll-animate">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+                    <img src="images/MG1.jpeg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/MG2.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/MG3.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/MG4.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/MG5.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/MG6.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/MG7.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/MG8.jpg" alt="Family Memory" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <!-- Wishes Section -->
+    <section style="background-color: var(--cream-bg);">
+        <div class="container mx-auto max-w-3xl px-4">
+            <div class="wishes-container scroll-animate" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-center" style="opacity: 1; animation: none; margin: 0 0 1.5rem 0;">আমাদের কিছু কথা</h2>
+                <p class="wishes-bengali">Our Words</p>
+                
+                <div class="wishes-text">
+                    <p style="margin-bottom: 1.5rem;">
+                        Dearest Mom and Dad,
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        As we celebrate this beautiful milestone of 25 years together, we want to pause and reflect on the incredible love story that has been the foundation of our family.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Through all the seasons of life—the joys and challenges, the quiet moments and grand celebrations—you've shown us what true love really means. It's not just about the big gestures, but the daily choices you both make to support, cherish, and uplift each other.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        You've taught us that a strong marriage is built on patience, kindness, forgiveness, and an unwavering commitment to growing together. We've watched you dance in the kitchen, laugh at inside jokes, and hold each other's hands through difficult times. These simple yet profound moments have shaped who we are.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Your love is the safe haven we return to. It's the reason we believe in love, family, and the power of standing by someone through thick and thin.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Thank you for showing us that silver jubilees aren't just about celebrating 25 years—they're about celebrating the countless memories, sacrifices, and moments of pure love that make a marriage truly golden.
+                    </p>
+                    <p>
+                        Here's to your love story, and to many more years of happiness together.
+                    </p>
+                    <p style="margin-top: 2rem; text-align: center; font-style: italic; color: var(--deep-red); font-weight: 600;">
+                        With all our love and admiration,<br>Your Children 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <span class="heart">❤️</span> by your Son</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">© 2026 | A Celebration of Love & Family</p>
+    </footer>
+
+    <script>
+        // ========================
+        // Duration Counter Function
+        // ========================
+        function updateCounter() {
+            // Wedding date: January 29, 2001
+            const weddingDate = new Date(2001, 0, 29); // Month is 0-indexed
+            const now = new Date();
+
+            let years = now.getFullYear() - weddingDate.getFullYear();
+            let months = now.getMonth() - weddingDate.getMonth();
+            let days = now.getDate() - weddingDate.getDate();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Adjust for negative days
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            // Adjust for negative months
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            document.getElementById('years').textContent = years;
+            document.getElementById('months').textContent = months;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update counter on load and every second
+        updateCounter();
+        setInterval(updateCounter, 1000);
+
+        // ========================
+        // Scroll Animation Function
+        // ========================
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.scroll-animate');
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = elementTop < window.innerHeight && elementBottom > 0;
+
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+
+        // ========================
+        // Confetti Effect
+        // ========================
+        class Confetti {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.animationId = null;
+
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+
+                window.addEventListener('resize', () => {
+                    this.canvas.width = window.innerWidth;
+                    this.canvas.height = window.innerHeight;
+                });
+            }
+
+            createParticles(count = 100) {
+                const colors = ['#D4AF37', '#C41E3A', '#8B1538', '#F4E4C1', '#FFFFFF'];
+
+                for (let i = 0; i < count; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height - this.canvas.height,
+                        size: Math.random() * 8 + 3,
+                        speedX: Math.random() * 4 - 2,
+                        speedY: Math.random() * 5 + 3,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        rotation: Math.random() * Math.PI * 2,
+                        rotationSpeed: Math.random() * 0.1 - 0.05,
+                        opacity: 1
+                    });
+                }
+            }
+
+            update() {
+                this.particles = this.particles.filter(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    particle.rotation += particle.rotationSpeed;
+                    particle.speedY += 0.1; // gravity
+                    particle.opacity -= 0.01;
+
+                    return particle.y < this.canvas.height && particle.opacity > 0;
+                });
+            }
+
+            draw() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach(particle => {
+                    this.ctx.save();
+                    this.ctx.globalAlpha = particle.opacity;
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.translate(particle.x, particle.y);
+                    this.ctx.rotate(particle.rotation);
+                    this.ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                    this.ctx.restore();
+                });
+            }
+
+            animate() {
+                this.update();
+                this.draw();
+
+                if (this.particles.length > 0) {
+                    this.animationId = requestAnimationFrame(() => this.animate());
+                }
+            }
+
+            start() {
+                this.createParticles(150);
+                this.animate();
+
+                // Create new particles every 300ms for 3 seconds
+                let duration = 0;
+                const interval = setInterval(() => {
+                    if (duration >= 3000) {
+                        clearInterval(interval);
+                        return;
+                    }
+                    this.createParticles(50);
+                    duration += 300;
+                }, 300);
+            }
+        }
+
+        // Initialize confetti on page load
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('confetti');
+            const confetti = new Confetti(canvas);
+            confetti.start();
+        });
+
+        // ========================
+        // Smooth Scroll for Links
+        // ========================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ========================
+        // Lightbox Functionality
+        // ========================
+        function openLightbox(content) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxContent = document.getElementById('lightboxContent');
+            lightboxContent.innerHTML = content;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Function to open timeline images in lightbox
+        function openTimelineImage(imagePath) {
+            const imgElement = `<img src="${imagePath}" alt="Timeline Memory" style="max-width: 90%; max-height: 90vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">`;
+            openLightbox(imgElement);
+        }
+
+        // ========================
+        // Universal Image Click to Expand
+        // ========================
+        // Make ALL images on the page clickable and open in lightbox
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all images in main content sections
+            const allImages = document.querySelectorAll('section img, .hero img, .family-card img, .gallery-item img');
+            
+            allImages.forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent event bubbling
+                    const imgSrc = this.src;
+                    const imgAlt = this.alt || 'Image';
+                    const imgElement = `<img src="${imgSrc}" alt="${imgAlt}" style="max-width: 90%; max-height: 90vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">`;
+                    openLightbox(imgElement);
+                });
+            });
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+    
+    <!-- AOS Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
