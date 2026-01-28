@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     
     <!-- AOS Library for Scroll Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -428,39 +428,54 @@
             line-height: 1.6;
         }
 
-        /* Uniform Grid Gallery (Instagram Style) */
+        /* Premium Vintage Frame Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 24px;
             opacity: 0;
         }
 
         .gallery-item {
             position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            background: #fdfaf0;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e3d5b8;
+            box-shadow: 0 8px 20px rgba(92, 83, 60, 0.15);
             cursor: pointer;
-            transition: all 0.3s ease;
-            height: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: auto;
+            z-index: 1;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 280px;
             display: block;
-            border-radius: 12px;
+            border-radius: 6px;
             object-fit: cover;
+            border: 3px solid #ffffff;
             transition: transform 0.3s ease;
         }
 
+        .gallery-item:nth-child(odd) {
+            transform: rotate(-2.5deg);
+        }
+
+        .gallery-item:nth-child(even) {
+            transform: rotate(2.5deg);
+        }
+
         .gallery-item:hover {
-            box-shadow: 0 15px 40px rgba(139, 21, 56, 0.25);
+            transform: rotate(0deg) scale(1.06);
+            box-shadow: 0 18px 45px rgba(92, 83, 60, 0.25);
+            border-color: #c5a028;
+            z-index: 5;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.02);
+            transform: scale(1.04);
         }
 
         /* Lightbox */
@@ -530,37 +545,46 @@
             }
         }
 
-        /* Wishes Section */
-        .wishes-container {
-            background: linear-gradient(135deg, var(--light-gold), white);
-            padding: 3rem;
+        /* Letter Section (Premium Framed) */
+        .letter-section {
+            background-color: #f4f1ea;
+        }
+
+        .letter-frame {
+            background: #fffcf5;
+            padding: 3.5rem 3rem;
             border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 4px double #c5a028;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             opacity: 0;
         }
 
-        .wishes-heading {
+        .letter-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--deep-red);
             margin-bottom: 1.5rem;
             text-align: center;
         }
 
-        .wishes-text {
+        .letter-body {
+            font-family: 'Merriweather', serif;
             font-size: 1rem;
-            line-height: 1.8;
+            line-height: 1.9;
             color: var(--dark-text);
-            text-align: justify;
+            text-align: left;
         }
 
-        .wishes-bengali {
-            display: block;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .letter-body p {
+            margin-bottom: 1.25rem;
+        }
+
+        .letter-signature {
+            margin-top: 2rem;
             text-align: center;
-            font-size: 1.3rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--deep-red);
         }
 
         /* Confetti Canvas */
@@ -882,20 +906,24 @@
             }
         }
 
-        /* Wishes Section - Mobile */
+        /* Letter Section - Mobile */
         @media (max-width: 768px) {
-            .wishes-container {
-                padding: 1.5rem;
-                border-radius: 10px;
+            .letter-frame {
+                padding: 2rem 1.5rem;
+                border-radius: 12px;
             }
 
-            .wishes-bengali {
-                font-size: 1.2rem;
+            .letter-title {
+                font-size: 1.6rem;
             }
 
-            .wishes-text {
+            .letter-body {
                 font-size: 0.9rem;
-                line-height: 1.5;
+                line-height: 1.6;
+            }
+
+            .letter-signature {
+                font-size: 1.6rem;
             }
         }
 
@@ -1031,7 +1059,7 @@
                     <div class="card-content">
                         <div class="card-name">বাবা</div>
                         <div class="card-relation">The Pillar</div>
-                        <div class="card-description">আমাদের শক্তির উৎস। যার জ্ঞান আর অভিজ্ঞতা আমাদের জীবনের পথ দেখায়।</div>
+                        <div class="card-description">Our source of strength. His wisdom and experience guide us through every step of life.</div>
                     </div>
                 </div>
 
@@ -1041,7 +1069,7 @@
                     <div class="card-content">
                         <div class="card-name">মা</div>
                         <div class="card-relation">The Heart</div>
-                        <div class="card-description">আমাদের ঘরের রানী। যার ভালোবাসা আমাদের প্রতিটি মুহূর্তকে মধুর করে তোলে।</div>
+                        <div class="card-description">The queen of our home. Her love makes every moment of our lives sweet and beautiful.</div>
                     </div>
                 </div>
 
@@ -1051,7 +1079,7 @@
                     <div class="card-content"> 
                         <div class="card-name">ছালু</div>
                         <div class="card-relation">Pride</div>
-                        <div class="card-description">আপনাদের ভালোবাসা দেখে শিখেছি প্রকৃত সম্পর্ক কাকে বলে। আপনাদের গর্ব হতে চাই সবসময়।</div>
+                        <div class="card-description">I always strive to make you proud.</div>
                     </div>
                 </div>
 
@@ -1061,7 +1089,7 @@
                     <div class="card-content">
                         <div class="card-name">দুন্তা</div>
                         <div class="card-relation">Little Sunshine</div>
-                        <div class="card-description">আপনার ভালোবাসা আমার মুখে হাসি ফোটায়। আপনারা আমার সবকিছু।</div>
+                        <div class="card-description">She is the reason behind our smile.</div>
                     </div>
                 </div>
 
@@ -1071,7 +1099,7 @@
                     <div class="card-content">
                         <div class="card-name">ঠাকুরদাদা</div>
                         <div class="card-relation">Grandfather</div>
-                        <div class="card-description">আমাদের বটবৃক্ষ। যার আশীর্বাদ আমাদের মাথার উপর সবসময় থাকে।</div>
+                        <div class="card-description">The shelter of our family. His blessings are always with us, guiding and protecting us.</div>
                     </div>
                 </div>
 
@@ -1081,7 +1109,7 @@
                     <div class="card-content">
                         <div class="card-name">ঠাকুরমা</div>
                         <div class="card-relation">Grandmother</div>
-                        <div class="card-description">স্নেহ আর ভালোবাসার ভাণ্ডার। যার গল্পের ঝুলি কখনো ফুরায় না।</div>
+                        <div class="card-description">A treasure trove of affection. Her stories never end, and neither does her care.</div>
                     </div>
                 </div>
 
@@ -1091,7 +1119,7 @@
                     <div class="card-content">
                         <div class="card-name">আমাদের তিন পিসি</div>
                         <div class="card-relation">Our Aunts</div>
-                        <div class="card-description">আদর আর আবদারের আরেক নাম। যারা আমাদের জীবনে রঙ ছড়িয়ে দেন।</div>
+                        <div class="card-description">The definition of pampering and love. They bring joy and color into our lives.</div>
                     </div>
                 </div>
 
@@ -1152,38 +1180,19 @@
         <div class="lightbox-content" id="lightboxContent"></div>
     </div>
 
-    <!-- Wishes Section -->
-    <section style="background-color: var(--cream-bg);">
+    <!-- Letter Section -->
+    <section class="letter-section">
         <div class="container mx-auto max-w-3xl px-4">
-            <div class="wishes-container scroll-animate" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-center" style="opacity: 1; animation: none; margin: 0 0 1.5rem 0;">আমাদের কিছু কথা</h2>
-                <p class="wishes-bengali">Our Words</p>
-                
-                <div class="wishes-text">
-                    <p style="margin-bottom: 1.5rem;">
-                        Dearest Mom and Dad,
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        As we celebrate this beautiful milestone of 25 years together, we want to pause and reflect on the incredible love story that has been the foundation of our family.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        Through all the seasons of life—the joys and challenges, the quiet moments and grand celebrations—you've shown us what true love really means. It's not just about the big gestures, but the daily choices you both make to support, cherish, and uplift each other.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        You've taught us that a strong marriage is built on patience, kindness, forgiveness, and an unwavering commitment to growing together. We've watched you dance in the kitchen, laugh at inside jokes, and hold each other's hands through difficult times. These simple yet profound moments have shaped who we are.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        Your love is the safe haven we return to. It's the reason we believe in love, family, and the power of standing by someone through thick and thin.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        Thank you for showing us that silver jubilees aren't just about celebrating 25 years—they're about celebrating the countless memories, sacrifices, and moments of pure love that make a marriage truly golden.
-                    </p>
-                    <p>
-                        Here's to your love story, and to many more years of happiness together.
-                    </p>
-                    <p style="margin-top: 2rem; text-align: center; font-style: italic; color: var(--deep-red); font-weight: 600;">
-                        With all our love and admiration,<br>Your Children 💕
-                    </p>
+            <div class="letter-frame scroll-animate" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="letter-title">A Promise to You</h2>
+                <div class="letter-body">
+                    <p>Dearest Ma and Baba,</p>
+                    <p>Happy 25th Anniversary!</p>
+                    <p>Today is the most special day for our family. You have spent 25 years building this beautiful life for us with so much love and sacrifice.</p>
+                    <p>We know how much you have done for us, often putting your own wishes aside just to see us smile. On this special day, we want to make a promise to you. We will try our best to fulfill every dream you have seen for us. We want to make you proud in everything we do.</p>
+                    <p>We will also listen to you and follow the path you have shown us. We will always try to live by the values you have taught us and respect the sacrifices you made.</p>
+                    <p>You are our world. Please keep your blessings on us forever.</p>
+                    <p class="letter-signature">With love and respect, Chalu &amp; Dunta</p>
                 </div>
             </div>
         </div>
